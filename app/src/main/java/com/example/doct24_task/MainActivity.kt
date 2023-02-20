@@ -14,10 +14,13 @@ import com.example.doct24_task.model.Movie
 import com.example.doct24_task.ui.theme.Doct24_taskTheme
 import com.example.doct24_task.viewModel.MovieViewModel
 import com.example.doct24_task.view.MovieItem
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class MainActivity : ComponentActivity() {
 
-    val movieViewModel by viewModels<MovieViewModel>()
+    val movieViewModel: MovieViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
