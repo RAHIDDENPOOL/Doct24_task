@@ -6,3 +6,4 @@
 - Стэк: 
 Kotlin, MVVM, Coroutine,  также использовать DI (koin, dagger, hilt).
 - **P.S** Дизайн не важен, главное, чтобы было просто и аккуратно. 
+![image](https://user-images.githubusercontent.com/110696633/220187011-7e3c4482-dbb8-4b99-bec3-abecc79570d6.png)
