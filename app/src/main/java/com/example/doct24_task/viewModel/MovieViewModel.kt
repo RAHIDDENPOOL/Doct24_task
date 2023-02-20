@@ -7,14 +7,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.doct24_task.model.Movie
 import com.example.doct24_task.network.ApiService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieViewModel : ViewModel() {
+@HiltViewModel
+class MovieViewModel @Inject constructor(private val apiService: ApiService) : ViewModel() {
     var movieListResponse: List<Movie> by mutableStateOf(listOf())
     var errorMessage: String by mutableStateOf("")
     fun getMovieList() {
         viewModelScope.launch {
-            val apiService = ApiService.getInstance()
             try {
                 val movieList = apiService.getMovie()
                 movieListResponse = movieList
@@ -22,6 +24,5 @@ class MovieViewModel : ViewModel() {
                 errorMessage = e.message.toString()
             }
         }
-
     }
 }
